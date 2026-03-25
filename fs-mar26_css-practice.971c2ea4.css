@@ -10,8 +10,33 @@ body {
   margin: 0;
 }
 
+.page {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.people {
+  grid-template-columns: repeat(1, 12.5rem);
+  justify-content: center;
+  gap: 2.5rem 1.875rem;
+  padding: 1.875rem 2.1875rem;
+  display: grid;
+}
+
+@media (width >= 31.25em) {
+  .people {
+    grid-template-columns: repeat(2, 12.5rem);
+  }
+}
+
+@media (width >= 62.5em) {
+  .people {
+    grid-template-columns: repeat(4, 12.5rem);
+  }
+}
+
 .person {
   text-align: center;
+  transition: transform 1s ease-in-out;
   position: relative;
 }
 
@@ -30,6 +55,7 @@ body {
 
 .person:hover {
   z-index: 1;
+  transform: scale(1.2);
 }
 
 .person:hover:before {
@@ -56,7 +82,7 @@ body {
   object-fit: cover;
   border-radius: 50%;
   width: 100%;
-  transition: border-radius 1s;
+  transition: border-radius 1s ease-in-out;
   display: block;
 }
 
@@ -82,8 +108,8 @@ body {
 }
 
 .person__extra {
-  opacity: 0;
   text-align: center;
+  opacity: 0;
   width: 100%;
   padding-top: .5625rem;
   font-size: 1.125rem;
@@ -100,29 +126,5 @@ body {
 
 .person__extra-pay:after {
   content: "M";
-}
-
-.page {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.people {
-  grid-template-columns: repeat(1, 12.5rem);
-  justify-content: center;
-  gap: 2.5rem 1.875rem;
-  padding: 1.875rem;
-  display: grid;
-}
-
-@media (width >= 31.25em) {
-  .people {
-    grid-template-columns: repeat(2, 12.5rem);
-  }
-}
-
-@media (width >= 62.5em) {
-  .people {
-    grid-template-columns: repeat(4, 12.5rem);
-  }
 }
 /*# sourceMappingURL=fs-mar26_css-practice.971c2ea4.css.map */
