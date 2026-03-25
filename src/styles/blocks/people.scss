@@ -1,0 +1,15 @@
+.people {
+  display: grid;
+  grid-template-columns: repeat(1, 12.5rem);
+  gap: 2.5rem 1.875rem;
+  padding: 1.875rem;
+  justify-content: center;
+
+  @include on-mobile-lg {
+    grid-template-columns: repeat(2, 12.5rem);
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(4, 12.5rem);
+  }
+}
