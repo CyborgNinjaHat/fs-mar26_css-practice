@@ -1,11 +1,11 @@
-@mixin on-mobile-lg {
-  @media (min-width: 31.25em) {
+@mixin on-compact {
+  @media (width >= 31.25em) {
     @content;
   }
 }
 
-@mixin on-desktop {
-  @media (min-width: 62.5em) {
+@mixin on-wide {
+  @media (width >= 62.5em) {
     @content;
   }
 }

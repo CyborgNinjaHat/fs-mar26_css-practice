@@ -1,22 +1,28 @@
 .person {
+  $card-padding: 0.75rem;
+  $rank-size: 2rem;
+  $transition-duration: 1s;
+
   position: relative;
   text-align: center;
+  transition: transform $transition-duration ease-in-out;
 
   &::before {
     content: "";
     position: absolute;
-    inset-inline: -0.75rem;
-    top: -0.75rem;
+    inset-inline: -$card-padding;
+    top: -$card-padding;
     bottom: -3.5rem;
     z-index: -1;
-    background: #eee;
-    border-radius: 0.75rem;
+    background: $color-bg-card;
+    border-radius: $card-padding;
     opacity: 0;
     pointer-events: none;
   }
 
   &:hover {
     z-index: 1;
+    transform: scale(1.2);
 
     &::before {
       opacity: 1;
@@ -33,7 +39,7 @@
 
   &__photo {
     position: relative;
-    width: 12.5rem;
+    width: $card-width;
     aspect-ratio: 1;
     margin-block-end: 0.5rem;
   }
@@ -42,9 +48,9 @@
     display: block;
     width: 100%;
     aspect-ratio: 1;
-    border-radius: 50%;
     object-fit: cover;
-    transition: border-radius 1s;
+    border-radius: 50%;
+    transition: border-radius $transition-duration ease-in-out;
   }
 
   &__rank {
@@ -52,13 +58,13 @@
     top: 50%;
     right: 0.5rem;
     transform: translateY(-50%);
-    height: 2rem;
+    height: $rank-size;
     aspect-ratio: 1;
-    background-color: #fff;
-    color: $color-text-secondary;
     font-size: 1rem;
     font-weight: 700;
-    line-height: 2rem;
+    line-height: $rank-size;
+    color: $color-text-secondary;
+    background-color: $color-bg-surface;
     border-radius: 50%;
   }
 
@@ -72,9 +78,9 @@
     position: absolute;
     width: 100%;
     padding-top: 0.5625rem;
-    opacity: 0;
     font-size: 1.125rem;
     text-align: center;
+    opacity: 0;
   }
 
   &__extra-sport::after {
